@@ -1,0 +1,20 @@
+name: 'TPME'
+version: '${version}'
+main: 'io.github.kuroka3.tpme.TPMEPlugin'
+api-version: '1.20'
+
+commands:
+  tpa:
+    description: 'asdf'
+  agree:
+    description: 'asdf'
+    aliases: ['d']
+  disagree:
+    description: 'asdf'
+    aliases: ['h', 's']
+  sethome:
+    description: 'asdf'
+  home:
+    description: 'home'
+  back:
+    description: 'goback'
