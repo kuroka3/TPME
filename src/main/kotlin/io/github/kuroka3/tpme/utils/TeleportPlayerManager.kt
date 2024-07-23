@@ -27,14 +27,18 @@ object TeleportPlayerManager {
     }
 
     private fun teleportConfirm(target: Player, to: Location) {
+        addPosition(target, target.location)
+        target.teleport(to)
+    }
+
+    fun addPosition(target: Player, location: Location) {
         val archive: Array<Location> = target.persistentDataContainer.get(originLocKey, LocationArrayDataType()) ?: emptyArray()
         val new: Array<Location> = Array(minOf(archive.size + 1, 10)) { i ->
             when (i) {
-                0 -> target.location
+                0 -> location
                 else -> archive[i - 1]
             }
         }
         target.persistentDataContainer.set(originLocKey, LocationArrayDataType(), new)
-        target.teleport(to)
     }
 }
